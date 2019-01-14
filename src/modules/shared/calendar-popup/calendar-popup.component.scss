@@ -1,0 +1,15 @@
+::ng-deep .modal-content {
+  display: inline-block;
+}
+
+::ng-deep .ui-calendar {
+  width: 500px;
+}
+
+::ng-deep .ui-timepicker {
+  border: 0 !important;
+}
+
+::ng-deep .ui-datepicker {
+  border: 0 !important;
+}

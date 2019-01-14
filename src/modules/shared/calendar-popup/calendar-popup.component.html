@@ -1,0 +1,22 @@
+<div class="card"
+     role="calendar-popup">
+    <div class="card-body padding-0">
+        <p-calendar [inline]="true"
+                    [(ngModel)]="date"
+                    [showTime]="true"></p-calendar>
+    </div>
+    <div class="card-footer">
+        <div class="text-right">
+            <button class="btn bg-white"
+                    (click)="ngOnDateSet()">
+                {{'TITLE_SET' | translate}}
+            </button>
+
+            <span>&nbsp;</span>
+            <button class="btn bg-white text-gray"
+                    (click)="ngOnCancelClicked()">
+                {{'TITLE_CANCEL' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

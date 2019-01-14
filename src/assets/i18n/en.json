@@ -1,5 +1,16 @@
 {
   "LOGOUT": "Logout",
   "DASHBOARD": "Dashboard",
-  "CATEGORY_GROUP": "Category Group"
+  "CATEGORY_GROUP": "Category Group",
+  "TITLE_PASSWORD": "Password",
+  "TITLE_Email": "Email",
+  "TITLE_FullName": "FullName",
+  "TITLE_Birthday": "Birthday",
+  "TITLE_Description": "Description",
+  "MSG_RegisterAccount_Email_REQUIRED": "Email is required",
+  "MSG_RegisterAccount_FullName_REQUIRED": "FullName is required",
+  "MSG_RegisterAccount_Description_REQUIRED": "Description is required",
+  "MSG_RegisterAccount_Password_REQUIRED": "Password is required",
+  "MSG_RegisterAccount_Password_MinLength": "Password must be at least 8 characters ",
+  "MSG_RegisterAccount_Email_Invalid": "Email must be a valid email address "
 }

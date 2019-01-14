@@ -5,6 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {AppSharedModule} from '../shared/app-shared.module';
 import {AccountRouteModule} from './account.route';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import {RegisterAccountComponent} from './user-management/register.account.component';
 
 //#region Module declaration
 
@@ -17,10 +18,12 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     NgxCaptchaModule
   ],
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegisterAccountComponent
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
+    RegisterAccountComponent
   ]
 })
 

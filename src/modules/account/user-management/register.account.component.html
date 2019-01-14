@@ -1,0 +1,105 @@
+<div class="">
+    <div class="container">
+        <div class="register-content">
+            <div class="register-form">
+                <form name="form"
+                      #registerAccountForm="ngForm"
+                      novalidate>
+                    <!--Email address-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-6 col-xs-12">
+                                    <label for="inputEmail">{{'TITLE_Email' | translate}}</label>
+                                </div>
+                                <div class="col-lg-8 col-sm-6 col-xs-12">
+                                    <input id="inputEmail" type="text" class="form-control" name="email" #email="ngModel"
+                                           [(ngModel)]="registerAccountModel.email"
+                                           [ngClass]="{ 'is-invalid': registerAccountModel.submitted && email.invalid }" required email />
+                                </div>
+
+                                <!-- Email validation messages -->
+                                <div *ngIf="registerAccountModel.submitted && email.invalid" class="invalid-feedback">
+                                    <div *ngIf="email.errors.required">{{'MSG_RegisterAccount_Email_REQUIRED' | translate}}</div>
+                                    <div *ngIf="email.errors.email">{{'MSG_RegisterAccount_Email_Invalid' | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Password-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-6 col-xs-12">
+                                    <label for="inputPassword">{{'TITLE_Password' | translate}}</label>
+                                </div>
+                                <div class="col-lg-8 col-sm-6 col-xs-12">
+                                    <input id="inputPassword" type="password" class="form-control" name="password" #password="ngModel"
+                                           [(ngModel)]="registerAccountModel.password"
+                                           [ngClass]="{ 'is-invalid': registerAccountModel.submitted && password.invalid }" required minlength="8" />
+                                </div>
+
+                                <!-- Password validation messages -->
+                                <div *ngIf="registerAccountModel.submitted && password.invalid" class="invalid-feedback">
+                                    <div *ngIf="password.errors.required">{{'MSG_RegisterAccount_Password_REQUIRED' | translate}}</div>
+                                    <div *ngIf="password.errors.minlength">{{'MSG_RegisterAccount_Password_MinLength' | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--FullName-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-6 col-xs-12">
+                                    <label for="inputFullName">{{'TITLE_FullName' | translate}}</label>
+                            </div>
+                                <div class="col-lg-8 col-sm-6 col-xs-12">
+                                    <input id="inputFullName" type="text" class="form-control" name="fullName" #fullName="ngModel"
+                                           [(ngModel)]="registerAccountModel.fullName"
+                                           [ngClass]="{ 'is-invalid': registerAccountModel.submitted && fullName.invalid }" required  />
+                                </div>
+
+                                <!-- FullName validation messages -->
+                                <div *ngIf="registerAccountModel.submitted && fullName.invalid" class="invalid-feedback">
+                                    <div *ngIf="fullName.errors.required">{{'MSG_RegisterAccount_FullName_REQUIRED' | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Description-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-6 col-xs-12">
+                                    <label for="inputDescription">{{'TITLE_FullName' | translate}}</label>
+                                </div>
+                                <div class="col-lg-8 col-sm-6 col-xs-12">
+                                    <input id="inputDescription" type="text" class="form-control" name="description" #description="ngModel"
+                                           [(ngModel)]="registerAccountModel.description"
+                                           [ngClass]="{ 'is-invalid': registerAccountModel.submitted && description.invalid }" required  />
+                                </div>
+
+                                <!-- Description validation messages -->
+                                <div *ngIf="registerAccountModel.submitted && description.invalid" class="invalid-feedback">
+                                    <div *ngIf="description.errors.required">{{'MSG_RegisterAccount_Description_REQUIRED' | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="social-login-content">
+                        <div class="social-button">
+                            <input type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" value="Create">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

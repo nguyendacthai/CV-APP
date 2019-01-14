@@ -9,6 +9,8 @@ import {UnauthorizedLayoutComponent} from './unauthorized-layout/unauthorized-la
 
 // import {BsDropdownModule} from 'ngx-bootstrap';
 import {TranslateModule} from '@ngx-translate/core';
+import {DateTimePickerComponent} from './date-time-picker/date-time-picker.component';
+import {CalendarPopupComponent} from './calendar-popup/calendar-popup.component';
 
 //#region Module declaration
 
@@ -24,13 +26,17 @@ import {TranslateModule} from '@ngx-translate/core';
     // AuthorizeLayoutComponent,
     UnauthorizedLayoutComponent,
     // SideBarComponent,
-    // NavigationBarComponent
+    // NavigationBarComponent,
+    DateTimePickerComponent,
+      CalendarPopupComponent
   ],
   declarations: [
     // AuthorizeLayoutComponent,
     UnauthorizedLayoutComponent,
     // SideBarComponent,
-    // NavigationBarComponent
+    // NavigationBarComponent,
+    DateTimePickerComponent,
+    CalendarPopupComponent
   ]
 })
 

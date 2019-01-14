@@ -1,0 +1,21 @@
+<div class="input-group">
+    <input class="form-control"
+           readonly="true"
+           [disabled]="ngIsComponentDisabled"
+           value="{{date ? (date | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm') : null}}"
+
+           (click)="ngOnCalendarIconClicked()">
+    <div class="input-group-btn">
+        <button type="button"
+                aria-label="Day selector"
+                class="btn btn-flat btn-default"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="true"
+                [disabled]="ngIsComponentDisabled"
+
+                (click)="ngOnCalendarIconClicked()">
+            <span class="fa fa-calendar"></span>
+        </button>
+    </div>
+</div>
