@@ -78,30 +78,32 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    // // Block the UI.
-    this.blockUiService.start();
+    this.router.navigate(['/dashboard']);
 
-    // Get the invisible captcha code.
-    this._invisibleCaptcha.execute();
+    // // // Block the UI.
+    // this.blockUiService.start();
 
-    console.log(this.loginModel);
-    this.userService
-      .basicLogin(this.loginModel)
-      .pipe(
-        finalize(() => {
-          this.blockUiService.stop();
-        })
-      )
-      .subscribe((model: TokenViewModel) => {
-        // Store local storage
-        this.localStorageService.set(LocalStorageKeyConstant.accessToken, model.code);
+    // // Get the invisible captcha code.
+    // this._invisibleCaptcha.execute();
 
-        // Send toastr message
-        this.toastr.success(MessageSentSuccessfullyConstant.loginMessage, MessageSentSuccessfullyConstant.loginTitle);
+    // console.log(this.loginModel);
+    // this.userService
+    //   .basicLogin(this.loginModel)
+    //   .pipe(
+    //     finalize(() => {
+    //       this.blockUiService.stop();
+    //     })
+    //   )
+    //   .subscribe((model: TokenViewModel) => {
+    //     // Store local storage
+    //     this.localStorageService.set(LocalStorageKeyConstant.accessToken, model.code);
 
-        // Redirect to dashboard.
-        return this.router.navigate(['/dashboard']);
-      });
+    //     // Send toastr message
+    //     this.toastr.success(MessageSentSuccessfullyConstant.loginMessage, MessageSentSuccessfullyConstant.loginTitle);
+
+    //     // Redirect to dashboard.
+    //     return this.router.navigate(['/dashboard']);
+    //   });
   }
 
   //#endregion

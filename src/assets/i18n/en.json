@@ -1,5 +1,6 @@
 {
   "LOGOUT": "Logout",
   "DASHBOARD": "Dashboard",
-  "CATEGORY_GROUP": "Category Group"
+  "SKILL_CATEGORY": "Skill Category",
+  "SKILL": "Skill"
 }

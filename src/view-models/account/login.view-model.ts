@@ -7,6 +7,7 @@ export class LoginViewModel {
   // Password of account
   public password: string;
 
+  // Captcha code
   public captchaCode: string;
 
   //#endregion
