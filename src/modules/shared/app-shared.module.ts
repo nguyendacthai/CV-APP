@@ -23,18 +23,13 @@ import {TranslateModule} from '@ngx-translate/core';
   ],
   exports: [
     AuthorizeLayoutComponent,
-  
-    UnauthorizedLayoutComponent
-  
+    UnauthorizedLayoutComponent,
     SideBarComponent,
     NavigationBarComponent
   ],
   declarations: [
-  
     AuthorizeLayoutComponent,
-   
-    UnauthorizedLayoutComponent
-  
+    UnauthorizedLayoutComponent,
     SideBarComponent,
     NavigationBarComponent
   ]
