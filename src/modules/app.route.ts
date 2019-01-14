@@ -15,10 +15,10 @@ const routes: Routes = [{
       path: 'login',
       loadChildren: './account/account.module#AccountModule'
     },
-    // {
-    //   path: 'dashboard',
-    //   loadChildren: 'modules/dashboard/dashboard.module#DashboardModule',
-    // },
+    {
+      path: 'dashboard',
+      loadChildren: './dashboard/dashboard.module#DashboardModule',
+    },
     // {
     //   path: 'category-group',
     //   loadChildren: 'modules/category-group/category-group.module#CategoryGroupModule'

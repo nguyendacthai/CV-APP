@@ -8,6 +8,7 @@ import { FormBuilder, Validators, FormGroup, NgForm} from "@angular/forms";
 import {IUserService} from '../../../interfaces/services/user-service.interface';
 import {TokenViewModel} from '../../../view-models/account/token.view-model';
 import {LocalStorageKeyConstant} from '../../../constants/local-storage-key.constant';
+
 import {MessageSentConstant} from '../../../constants/message-sent-successfully.constant';
 
 import {ToastrService} from 'ngx-toastr';
@@ -78,30 +79,33 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    // // Block the UI.
-    this.blockUiService.start();
+    this.router.navigate(['/dashboard']);
 
-    // Get the invisible captcha code.
-    this._invisibleCaptcha.execute();
+    // // // Block the UI.
+    // this.blockUiService.start();
 
-    console.log(this.loginModel);
-    this.userService
-      .basicLogin(this.loginModel)
-      .pipe(
-        finalize(() => {
-          this.blockUiService.stop();
-        })
-      )
-      .subscribe((model: TokenViewModel) => {
-        // Store local storage
-        this.localStorageService.set(LocalStorageKeyConstant.accessToken, model.code);
+    // // Get the invisible captcha code.
+    // this._invisibleCaptcha.execute();
 
-        // Send toastr message
         this.toastr.success(MessageSentConstant.loginMessage, MessageSentConstant.loginTitle);
+    // console.log(this.loginModel);
+    // this.userService
+    //   .basicLogin(this.loginModel)
+    //   .pipe(
+    //     finalize(() => {
+    //       this.blockUiService.stop();
+    //     })
+    //   )
+    //   .subscribe((model: TokenViewModel) => {
+    //     // Store local storage
+    //     this.localStorageService.set(LocalStorageKeyConstant.accessToken, model.code);
 
-        // Redirect to dashboard.
-        return this.router.navigate(['/dashboard']);
-      });
+    //     // Send toastr message
+    //     this.toastr.success(MessageSentConstant.loginMessage, MessageSentConstant.loginTitle);
+
+    //     // Redirect to dashboard.
+    //     return this.router.navigate(['/dashboard']);
+    //   });
   }
 
   //#endregion

@@ -1,9 +1,9 @@
 {
   "LOGOUT": "Logout",
   "DASHBOARD": "Dashboard",
-  "CATEGORY_GROUP": "Category Group",
-  "TITLE_PASSWORD": "Password",
-  "TITLE_Email": "Email",
+  "SKILL_CATEGORY": "Skill Category",
+  "SKILL": "Skill"
+"TITLE_Email": "Email",
   "TITLE_FullName": "FullName",
   "TITLE_Birthday": "Birthday",
   "TITLE_Description": "Description",
