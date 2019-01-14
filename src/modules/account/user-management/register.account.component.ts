@@ -2,13 +2,14 @@ import {Inject, Component, OnInit, ViewChild} from '@angular/core';
 import {BlockUI, NgBlockUI} from 'ng-block-ui';
 import {Router} from '@angular/router';
 import {LocalStorageService} from 'ngx-localstorage';
-import { FormBuilder, Validators, FormGroup, NgForm} from '@angular/forms';
+import {FormBuilder, Validators, FormGroup, NgForm} from '@angular/forms';
 
 import {IUserService} from '../../../interfaces/services/user-service.interface';
 
 import {ToastrService} from 'ngx-toastr';
-import { finalize } from 'rxjs/operators';
 import {RegisterAccountViewModel} from '../../../view-models/account/user-management/register-account.view-model';
+import {finalize} from 'rxjs/operators';
+import {MessageSentConstant} from '../../../constants/message-sent-successfully.constant';
 
 @Component({
     selector: 'app-register-account',
@@ -69,23 +70,20 @@ export class RegisterAccountComponent implements OnInit {
         // // Block the UI.
         this.blockUiService.start();
 
-        // this.userService
-        //     .basicLogin(this.loginModel)
-        //     .pipe(
-        //         finalize(() => {
-        //             this.blockUiService.stop();
-        //         })
-        //     )
-        //     .subscribe((model: TokenViewModel) => {
-        //         // Store local storage
-        //         this.localStorageService.set(LocalStorageKeyConstant.accessToken, model.code);
-        //
-        //         // Send toastr message
-        //         this.toastr.success(MessageSentSuccessfullyConstant.loginMessage, MessageSentSuccessfullyConstant.loginTitle);
-        //
-        //         // Redirect to dashboard.
-        //         return this.router.navigate(['/dashboard']);
-        //     });
+        this.userService
+            .createAccount(this.registerAccountModel)
+            .pipe(
+                finalize(() => {
+                    this.blockUiService.stop();
+                })
+            )
+            .subscribe(() => {
+                // Store local storageL
+                // Send toastr message
+                this.toastr.success(MessageSentConstant.registerAccountSuccess, MessageSentConstant.registerAccountTitle);
+                // Redirect to dashboard.
+                return this.router.navigate(['/login']);
+            });
     }
 
     //#endregion

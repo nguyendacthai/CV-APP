@@ -1,0 +1,49 @@
+.register-content {
+  max-width: 750px;
+  margin: 8vh auto;
+
+}
+
+.register-form{
+  background: #ffffff;
+  padding: 30px 30px 20px;
+  border-radius: 2px;
+  height: 550px;
+}
+
+.register-form .btn {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px;
+  border: 0px;
+
+}
+.pull-right-btn {
+ margin-right: 20px;
+}
+.register-form label {
+  color: #878787;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.register-form label a {
+  color: #ff2e44;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #878787;
+}
+
+p:focus {
+  border: none;
+  outline: 0;
+}
+
+.register-header {
+  text-align: center;
+}
+
