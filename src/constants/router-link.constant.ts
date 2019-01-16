@@ -3,9 +3,9 @@ export class RouterLinkConstant {
     link: '/dashboard'
   };
 
-  public categoryGroup = {
-    addNew : '/category-group/add-new',
-    listing : '/category-group/manage'
+  public skillCategory = {
+    addNew : '/skill-category/add-new',
+    listing : '/skill-category/listing'
   };
 
 }

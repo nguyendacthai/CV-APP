@@ -22,6 +22,8 @@ import {ToastrModule} from 'ngx-toastr/';
 import {BlockUIModule} from 'ng-block-ui';
 
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { SkillCategoryDetailComponent } from './skill-category/skill-category-detail/skill-category-detail.component';
+import { SkillCategoryListingComponent } from './skill-category/skill-category-listing/skill-category-listing.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -60,7 +62,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // declarations: [SkillCategoryDetailComponent, SkillCategoryListingComponent]
 })
 export class AppModule {
 }

@@ -19,10 +19,10 @@ const routes: Routes = [{
       path: 'dashboard',
       loadChildren: './dashboard/dashboard.module#DashboardModule',
     },
-    // {
-    //   path: 'category-group',
-    //   loadChildren: 'modules/category-group/category-group.module#CategoryGroupModule'
-    // }
+    {
+      path: 'skill-category',
+      loadChildren: './skill-category/skill-category.module#SkillCategoryModule'
+    }
   ]
 }];
 
