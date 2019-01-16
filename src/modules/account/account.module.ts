@@ -5,7 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {AppSharedModule} from '../shared/app-shared.module';
 import {AccountRouteModule} from './account.route';
 import { NgxCaptchaModule } from 'ngx-captcha';
-import {RegisterAccountComponent} from './user-management/register.account.component';
+import {RegisterAccountComponent} from './user-management/register-account.component';
 import {MomentModule} from 'ngx-moment';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpLoaderFactory} from '../../factories/ngx-translate.factory';
