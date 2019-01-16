@@ -22,15 +22,16 @@ import {ToastrModule} from 'ngx-toastr/';
 import {BlockUIModule} from 'ng-block-ui';
 
 import { NgxCaptchaModule } from 'ngx-captcha';
-<<<<<<< HEAD
-import { SkillCategoryDetailComponent } from './skill-category/skill-category-detail/skill-category-detail.component';
-import { SkillCategoryListingComponent } from './skill-category/skill-category-listing/skill-category-listing.component';
-=======
+
 import {DateTimePickerComponent} from './shared/date-time-picker/date-time-picker.component';
 import {CalendarPopupComponent} from './shared/calendar-popup/calendar-popup.component';
 import {CalendarModule} from 'primeng/calendar';
-import {HttpLoaderFactory} from '../factories/ngx-translate.factory';
->>>>>>> 1bebfd1c30a99ea37a2c9421471b4b7758504999
+// import {HttpLoaderFactory} from '../factories/ngx-translate.factory';
+
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 
 @NgModule({
@@ -78,8 +79,7 @@ import {HttpLoaderFactory} from '../factories/ngx-translate.factory';
       multi: true
     }
   ],
-  bootstrap: [AppComponent],
-  // declarations: [SkillCategoryDetailComponent, SkillCategoryListingComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
