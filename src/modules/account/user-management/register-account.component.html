@@ -21,7 +21,7 @@
                                 <div class="col-lg-8 col-sm-6 col-xs-12">
                                     <input id="inputEmail" type="text" class="form-control" name="email" #email="ngModel"
                                            [(ngModel)]="registerAccountModel.email"
-                                           [ngClass]="{ 'is-invalid': registerAccountModel.submitted && email.invalid }" required email />
+                                           [ngClass]="{ 'is-invalid': registerAccountForm.submitted && email.invalid }" required email />
                                 </div>
 
                                 <!-- Email validation messages -->
@@ -44,7 +44,7 @@
                                 <div class="col-lg-8 col-sm-6 col-xs-12">
                                     <input id="inputPassword" type="password" class="form-control" name="password" #password="ngModel"
                                            [(ngModel)]="registerAccountModel.password"
-                                           [ngClass]="{ 'is-invalid': registerAccountModel.submitted && password.invalid }" required minlength="8" />
+                                           [ngClass]="{ 'is-invalid': registerAccountForm.submitted && password.invalid }" required minlength="8" />
                                 </div>
 
                                 <!-- Password validation messages -->
@@ -66,7 +66,7 @@
                                 <div class="col-lg-8 col-sm-6 col-xs-12">
                                     <input id="inputFullName" type="text" class="form-control" name="fullName" #fullName="ngModel"
                                            [(ngModel)]="registerAccountModel.fullName"
-                                           [ngClass]="{ 'is-invalid': registerAccountModel.submitted && fullName.invalid }" required  />
+                                           [ngClass]="{ 'is-invalid': registerAccountForm.submitted && fullName.invalid }" required  />
                                 </div>
 
                                 <!-- FullName validation messages -->
@@ -85,11 +85,21 @@
                                     <label for="inputDescription">Birthday</label>
                                 </div>
                                 <div class="col-lg-8 col-sm-6 col-xs-12">
-                                    <date-time-picker name="birthday"
-                                                      [unix-time-format]="true"
-                                                      [(ngModel)]="registerAccountModel.birthday">
-                                    </date-time-picker>
+                                    <!--<date-time-picker name="birthday"-->
+                                                      <!--[unix-time-format]="true"-->
+                                                      <!--[(ngModel)]="registerAccountModel.birthday">-->
+                                    <!--</date-time-picker>-->
+                                    <kendo-datepicker placeholder="choose your birth date..."
+                                            name="birthday"
+                                            [(ngModel)]="registerAccountModel.birthday"
+                                            [ngClass]="{ 'is-invalid': registerAccountForm.submitted && birthday.invalid }"
+                                            required
+                                    ></kendo-datepicker>
+
                                 </div>
+                                <!--<div *ngIf="registerAccountForm.submitted && birthday.invalid" class="invalid-feedback">-->
+                                    <!--<div *ngIf="birthday.errors.required">Birthday is required</div>-->
+                                <!--</div>-->
 
                             </div>
                         </div>
@@ -102,15 +112,19 @@
                                     <label for="inputDescription">Description</label>
                                 </div>
                                 <div class="col-lg-8 col-sm-6 col-xs-12">
-                                    <input id="inputDescription" type="text" class="form-control" name="description" #description="ngModel"
-                                           [(ngModel)]="registerAccountModel.description"
-                                           [ngClass]="{ 'is-invalid': registerAccountModel.submitted && description.invalid }" required  />
+                                    <textarea  kendoTextArea [autoSize]="true" class="form-control" id="inputDescription"
+                                               #description="ngModel"
+                                               [(ngModel)]="registerAccountModel.description" required
+                                               name="description"
+                                    >
+
+                                    </textarea>
                                 </div>
 
-                                <!-- Description validation messages -->
-                                <div *ngIf="registerAccountForm.submitted && description.invalid" class="invalid-feedback">
-                                    <div *ngIf="description.errors.required">description is required</div>
-                                </div>
+                                <!--&lt;!&ndash; Description validation messages &ndash;&gt;-->
+                                <!--<div *ngIf="registerAccountForm.submitted && description.invalid" class="invalid-feedback">-->
+                                    <!--<div *ngIf="description.errors.required">description is required</div>-->
+                                <!--</div>-->
 
                             </div>
                         </div>

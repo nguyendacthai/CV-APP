@@ -27,6 +27,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "node_modules/startbootstrap-sb-admin/vendor/bootstrap/css/bootstrap.min.css",
               "node_modules/startbootstrap-sb-admin/vendor/fontawesome-free/css/all.min.css",
               "node_modules/startbootstrap-sb-admin/css/sb-admin.css",
@@ -35,6 +38,7 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
@@ -90,6 +94,9 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.scss"
             ],
             "scripts": [],

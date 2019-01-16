@@ -3,7 +3,7 @@ import {BsModalRef} from 'ngx-bootstrap';
 import {Subject} from 'rxjs';
 
 @Component({
-    selector: 'app-calendar-popup',
+    selector: 'calendar-popup',
     templateUrl: 'calendar-popup.component.html',
     styleUrls: ['calendar-popup.component.scss']
 })

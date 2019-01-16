@@ -12,9 +12,9 @@ export class RegisterAccountViewModel {
     public fullName: string;
 
     // birthday of account
-    public birthday: number;
+    public birthday: Date;
 
     // description of account
-    public description: number;
+    public description: string;
     //#endregion
 }

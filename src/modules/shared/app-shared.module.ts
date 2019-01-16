@@ -11,6 +11,7 @@ import {NavigationBarComponent} from './navigation-bar/navigation-bar.component'
 import {TranslateModule} from '@ngx-translate/core';
 import {MomentModule} from 'ngx-moment';
 import {DateTimePickerComponent} from './date-time-picker/date-time-picker.component';
+import {ModalModule} from 'ngx-bootstrap';
 
 
 //#region Module declaration
@@ -21,7 +22,8 @@ import {DateTimePickerComponent} from './date-time-picker/date-time-picker.compo
         FormsModule,
         RouterModule,
         MomentModule,
-        TranslateModule
+        TranslateModule,
+        ModalModule.forRoot(),
     ],
     exports: [
         AuthorizeLayoutComponent,

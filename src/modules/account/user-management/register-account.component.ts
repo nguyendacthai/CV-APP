@@ -23,7 +23,6 @@ export class RegisterAccountComponent implements OnInit {
     @BlockUI()
     private blockUiService: NgBlockUI;
 
-    // Basic login form
     @ViewChild('registerAccountForm')
     private readonly _registerAccountForm: NgForm;
 
@@ -49,7 +48,6 @@ export class RegisterAccountComponent implements OnInit {
     //#region Methods
 
     ngOnInit() {
-
     }
 
 

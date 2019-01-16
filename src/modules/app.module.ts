@@ -25,6 +25,14 @@ import {NgxCaptchaModule} from 'ngx-captcha';
 
 import {CalendarPopupComponent} from './shared/calendar-popup/calendar-popup.component';
 import {CalendarModule} from 'primeng/calendar';
+import {InputsModule} from '@progress/kendo-angular-inputs';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { GridModule } from '@progress/kendo-angular-grid';
+
+
+
+
 // import {HttpLoaderFactory} from '../factories/ngx-translate.factory';
 
 // required for AOT compilation
@@ -53,12 +61,15 @@ export function HttpLoaderFactory(http: HttpClient) {
         }),
         CalendarModule,
         NgxCaptchaModule, // Captcha code
-
+        DateInputsModule,
         // Application modules.
         ServiceModule.forRoot(),
         NgxLocalStorageModule.forRoot(),
         // GuardModule.forRoot(),
-        AppSharedModule,  // Include: Unauthorized layout(login page) and Authorize layout(Sidebar + Navigation bar)
+        AppSharedModule,
+        InputsModule,
+        DropDownsModule,
+        GridModule,  // Include: Unauthorized layout(login page) and Authorize layout(Sidebar + Navigation bar)
     ],
     declarations: [
         CalendarPopupComponent,
