@@ -4,7 +4,7 @@ import {CalendarPopupComponent} from '../calendar-popup/calendar-popup.component
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
-    selector: 'app-date-time-picker',
+    selector: 'date-time-picker',
     templateUrl: 'date-time-picker.component.html',
     styleUrls: ['date-time-picker.component.scss'],
     providers: [

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import {AppComponent} from './app.component';
 import { Routes, RouterModule } from '@angular/router';
+import {MomentModule} from 'ngx-moment';
 
 // Application routes configuration.
 const routes: Routes = [{

@@ -9,30 +9,34 @@ import {NavigationBarComponent} from './navigation-bar/navigation-bar.component'
 
 // import {BsDropdownModule} from 'ngx-bootstrap';
 import {TranslateModule} from '@ngx-translate/core';
+import {MomentModule} from 'ngx-moment';
+import {DateTimePickerComponent} from './date-time-picker/date-time-picker.component';
 
 
 //#region Module declaration
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    // BsDropdownModule.forRoot(),
-    TranslateModule
-  ],
-  exports: [
-    AuthorizeLayoutComponent,
-    UnauthorizedLayoutComponent,
-    SideBarComponent,
-    NavigationBarComponent
-  ],
-  declarations: [
-    AuthorizeLayoutComponent,
-    UnauthorizedLayoutComponent,
-    SideBarComponent,
-    NavigationBarComponent
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterModule,
+        MomentModule,
+        TranslateModule
+    ],
+    exports: [
+        AuthorizeLayoutComponent,
+        UnauthorizedLayoutComponent,
+        SideBarComponent,
+        NavigationBarComponent,
+        DateTimePickerComponent
+    ],
+    declarations: [
+        AuthorizeLayoutComponent,
+        UnauthorizedLayoutComponent,
+        SideBarComponent,
+        NavigationBarComponent,
+        DateTimePickerComponent
+    ]
 })
 
 export class AppSharedModule {
