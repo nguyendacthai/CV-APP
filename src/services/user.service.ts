@@ -8,6 +8,8 @@ import {TokenViewModel} from '../view-models/account/token.view-model';
 
 import {ConfigUrlService} from '../constants/config-url-service.constant';
 import {ConfigUrlUserService} from '../constants/config-url-user-service.constant';
+import {RegisterAccountViewModel} from '../view-models/account/user-management/register-account.view-model';
+import {User} from '../models/entity/user';
 
 
 @Injectable()
@@ -32,6 +34,12 @@ export class UserService implements IUserService {
     const url = `${ConfigUrlService.urlApi}/${ConfigUrlUserService.login}`;
     return this.httpClient
       .post<TokenViewModel>(url, model);
+  }
+
+  public createAccount(model: RegisterAccountViewModel): Observable<User> {
+    const url = `${ConfigUrlService.urlApi}/${ConfigUrlUserService.createAccount}`;
+    return this.httpClient
+        .post<User>(url, model);
   }
 
   //#endregion

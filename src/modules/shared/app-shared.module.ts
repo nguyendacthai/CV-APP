@@ -10,6 +10,7 @@ import {NavigationBarComponent} from './navigation-bar/navigation-bar.component'
 // import {BsDropdownModule} from 'ngx-bootstrap';
 import {TranslateModule} from '@ngx-translate/core';
 
+
 //#region Module declaration
 
 @NgModule({

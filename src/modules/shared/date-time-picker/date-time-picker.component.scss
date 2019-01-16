@@ -1,0 +1,4 @@
+input:not(disabled),
+input:not(.disabled) {
+  background-color: white !important;
+}

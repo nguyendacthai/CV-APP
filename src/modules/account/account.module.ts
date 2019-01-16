@@ -5,6 +5,11 @@ import {LoginComponent} from './login/login.component';
 import {AppSharedModule} from '../shared/app-shared.module';
 import {AccountRouteModule} from './account.route';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import {RegisterAccountComponent} from './user-management/register.account.component';
+import {MomentModule} from 'ngx-moment';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {HttpLoaderFactory} from '../../factories/ngx-translate.factory';
+import {HttpClient} from '@angular/common/http';
 
 //#region Module declaration
 
@@ -14,13 +19,23 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     FormsModule,
     AccountRouteModule,
     AppSharedModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    MomentModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegisterAccountComponent
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
+    RegisterAccountComponent
   ]
 })
 

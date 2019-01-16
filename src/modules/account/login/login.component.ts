@@ -8,7 +8,8 @@ import { FormBuilder, Validators, FormGroup, NgForm} from "@angular/forms";
 import {IUserService} from '../../../interfaces/services/user-service.interface';
 import {TokenViewModel} from '../../../view-models/account/token.view-model';
 import {LocalStorageKeyConstant} from '../../../constants/local-storage-key.constant';
-import {MessageSentSuccessfullyConstant} from '../../../constants/message-sent-successfully.constant';
+
+import {MessageSentConstant} from '../../../constants/message-sent-successfully.constant';
 
 import {ToastrService} from 'ngx-toastr';
 import { ReCaptchaV3Service, InvisibleReCaptchaComponent } from 'ngx-captcha';
@@ -86,6 +87,7 @@ export class LoginComponent implements OnInit {
     // // Get the invisible captcha code.
     // this._invisibleCaptcha.execute();
 
+        this.toastr.success(MessageSentConstant.loginMessage, MessageSentConstant.loginTitle);
     // console.log(this.loginModel);
     // this.userService
     //   .basicLogin(this.loginModel)
@@ -99,7 +101,7 @@ export class LoginComponent implements OnInit {
     //     this.localStorageService.set(LocalStorageKeyConstant.accessToken, model.code);
 
     //     // Send toastr message
-    //     this.toastr.success(MessageSentSuccessfullyConstant.loginMessage, MessageSentSuccessfullyConstant.loginTitle);
+    //     this.toastr.success(MessageSentConstant.loginMessage, MessageSentConstant.loginTitle);
 
     //     // Redirect to dashboard.
     //     return this.router.navigate(['/dashboard']);

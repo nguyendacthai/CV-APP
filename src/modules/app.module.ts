@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {MomentModule} from 'ngx-moment';
 import {AppRouteModule} from './app.route';
 import {AppComponent} from './app.component';
 
@@ -22,13 +22,16 @@ import {ToastrModule} from 'ngx-toastr/';
 import {BlockUIModule} from 'ng-block-ui';
 
 import { NgxCaptchaModule } from 'ngx-captcha';
+<<<<<<< HEAD
 import { SkillCategoryDetailComponent } from './skill-category/skill-category-detail/skill-category-detail.component';
 import { SkillCategoryListingComponent } from './skill-category/skill-category-listing/skill-category-listing.component';
+=======
+import {DateTimePickerComponent} from './shared/date-time-picker/date-time-picker.component';
+import {CalendarPopupComponent} from './shared/calendar-popup/calendar-popup.component';
+import {CalendarModule} from 'primeng/calendar';
+import {HttpLoaderFactory} from '../factories/ngx-translate.factory';
+>>>>>>> 1bebfd1c30a99ea37a2c9421471b4b7758504999
 
-// required for AOT compilation
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
 
 @NgModule({
   imports: [
@@ -37,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     AppRouteModule,
     HttpClientModule,
+    MomentModule,
     BrowserAnimationsModule, // Required animation module (ex: for toastr)
     ToastrModule.forRoot(), // TOASTR register
     BlockUIModule.forRoot(),  // Block ui register
@@ -47,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    CalendarModule,
     NgxCaptchaModule, // Captcha code
 
     // Application modules.
@@ -54,6 +59,17 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgxLocalStorageModule.forRoot(),
     // GuardModule.forRoot(),
     AppSharedModule,  // Include: Unauthorized layout(login page) and Authorize layout(Sidebar + Navigation bar)
+  ],
+  declarations: [
+    DateTimePickerComponent,
+    CalendarPopupComponent,
+  ],
+  exports: [
+    DateTimePickerComponent,
+    CalendarPopupComponent,
+  ],
+  entryComponents: [
+    CalendarPopupComponent
   ],
   providers: [
     {
