@@ -19,7 +19,7 @@
                 </div>
                 <div class="mess__item">
                   <div class="image img-cir img-40">
-                    <<img src="../../../assets/images/icon/avatar-06.jpg"/>
+                    <img src="../../../assets/images/icon/avatar-06.jpg"/>
                   </div>
                   <div class="content">
                     <h6>Michelle Moreno</h6>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="mess__item">
                   <div class="image img-cir img-40">
-                    <<img src="../../../assets/images/icon/avatar-04.jpg"/>
+                    <img src="../../../assets/images/icon/avatar-04.jpg"/>
                   </div>
                   <div class="content">
                     <h6>Diane Myers</h6>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="email__item">
                   <div class="image img-cir img-40">
-                    <<img src="../../../assets/images/icon/avatar-04.jpg"/>
+                    <img src="../../../assets/images/icon/avatar-04.jpg"/>
                   </div>
                   <div class="content">
                     <p>Meeting about new dashboard...</p>
@@ -120,14 +120,14 @@
             </div>
           </div>
           <div class="account-wrap">
-            <div class="account-item clearfix js-item-menu">
+            <div class="account-item clearfix js-item-menu show-dropdown" (click)="Toggle();">
               <div class="image">
                 <img src="../../../assets/images/icon/meo.jpg"/>
               </div>
               <div class="content">
                 <a class="js-acc-btn">Thai Nguyen</a>
               </div>
-              <div class="account-dropdown js-dropdown">
+              <div class="account-dropdown js-dropdown" *ngIf="!toggle_account">
                 <div class="info clearfix">
                   <div class="image">
                     <a>

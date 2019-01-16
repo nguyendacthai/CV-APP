@@ -25,7 +25,7 @@
     "install": "^0.12.2",
     "moment": "^2.23.0",
     "ng-block-ui": "^2.1.0",
-    "ngx-bootstrap": "latest",
+    "ngx-bootstrap": "^3.1.4",
     "ngx-captcha": "^6.2.1",
     "ngx-localstorage": "^2.3.0",
     "ngx-moment": "^3.3.0",
