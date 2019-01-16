@@ -3,6 +3,7 @@
         <div class="register-content">
             <div class="register-form">
                 <form name="form"
+                      (ngSubmit)="onSaveAccount($event)"
                       #registerAccountForm="ngForm"
                       novalidate>
                     <div class="register-header">
@@ -24,10 +25,11 @@
                                 </div>
 
                                 <!-- Email validation messages -->
-                                <div *ngIf="registerAccountModel.submitted && email.invalid" class="invalid-feedback">
-                                    <div *ngIf="email.errors.required">{{'MSG_RegisterAccount_Email_REQUIRED' | translate}}</div>
-                                    <div *ngIf="email.errors.email">{{'MSG_RegisterAccount_Email_Invalid' | translate}}</div>
+                                <div *ngIf="registerAccountForm.submitted && email.invalid" class="invalid-feedback">
+                                    <div *ngIf="email.errors.required">Email is required</div>
+                                    <div *ngIf="email.errors.email">Email must be a valid email address</div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -46,8 +48,8 @@
                                 </div>
 
                                 <!-- Password validation messages -->
-                                <div *ngIf="registerAccountModel.submitted && password.invalid" class="invalid-feedback">
-                                    <div *ngIf="password.errors.required">{{'MSG_RegisterAccount_Password_REQUIRED' | translate}}</div>
+                                <div *ngIf="registerAccountForm.submitted && password.invalid" class="invalid-feedback">
+                                    <div *ngIf="password.errors.required">passwor is required</div>
                                     <div *ngIf="password.errors.minlength">{{'MSG_RegisterAccount_Password_MinLength' | translate}}</div>
                                 </div>
                             </div>
@@ -68,9 +70,10 @@
                                 </div>
 
                                 <!-- FullName validation messages -->
-                                <div *ngIf="registerAccountModel.submitted && fullName.invalid" class="invalid-feedback">
-                                    <div *ngIf="fullName.errors.required">{{'MSG_RegisterAccount_FullName_REQUIRED' | translate}}</div>
+                                <div *ngIf="registerAccountForm.submitted && fullName.invalid" class="invalid-feedback">
+                                    <div *ngIf="fullName.errors.required">Fullname is required</div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -105,9 +108,10 @@
                                 </div>
 
                                 <!-- Description validation messages -->
-                                <div *ngIf="registerAccountModel.submitted && description.invalid" class="invalid-feedback">
-                                    <div *ngIf="description.errors.required">{{'MSG_RegisterAccount_Description_REQUIRED' | translate}}</div>
+                                <div *ngIf="registerAccountForm.submitted && description.invalid" class="invalid-feedback">
+                                    <div *ngIf="description.errors.required">description is required</div>
                                 </div>
+
                             </div>
                         </div>
                     </div>

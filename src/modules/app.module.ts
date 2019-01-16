@@ -21,13 +21,8 @@ import {ToastrModule} from 'ngx-toastr/';
 
 import {BlockUIModule} from 'ng-block-ui';
 
-<<<<<<< HEAD
 import {NgxCaptchaModule} from 'ngx-captcha';
-=======
-import { NgxCaptchaModule } from 'ngx-captcha';
 
-import {DateTimePickerComponent} from './shared/date-time-picker/date-time-picker.component';
->>>>>>> 7f483cf12714288b585567888cf140e0bcfbb0e8
 import {CalendarPopupComponent} from './shared/calendar-popup/calendar-popup.component';
 import {CalendarModule} from 'primeng/calendar';
 // import {HttpLoaderFactory} from '../factories/ngx-translate.factory';
