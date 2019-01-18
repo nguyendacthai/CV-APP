@@ -32,6 +32,19 @@ export class RegisterAccountComponent implements OnInit {
       * */
     public registerAccountModel: RegisterAccountViewModel;
 
+    private _birthday: Date;
+    public get birthday(): Date {
+        return this._birthday;
+    }
+
+    public set birthday(value: Date) {
+        this._birthday = value;
+        if (value) {
+            this.registerAccountModel
+                .birthday = value.getTime();
+        }
+    }
+
     //#endregion
 
     //#region Constructor

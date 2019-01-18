@@ -9,11 +9,6 @@ const routes: Routes = [{
   children: [
     {
       path: '',
-      pathMatch: 'full',
-      redirectTo: '/login'
-    },
-    {
-      path: 'login',
       loadChildren: './account/account.module#AccountModule'
     },
     {
@@ -23,6 +18,10 @@ const routes: Routes = [{
     {
       path: 'skill-category',
       loadChildren: './skill-category/skill-category.module#SkillCategoryModule'
+    },
+    {
+      path: '**',
+      redirectTo: '/login'
     }
   ]
 }];
