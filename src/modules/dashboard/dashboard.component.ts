@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'dashboard',
@@ -9,15 +10,26 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class DashboardComponent implements OnInit {
 
+  //#region Properties
+
+  closeResult: string;
+
+  //#endregion
+
   //#region Constructor
 
-  public constructor(private httpClient: HttpClient, private toastr: ToastrService) {
+  public constructor(private httpClient: HttpClient,
+    private toastr: ToastrService,
+    private modalService: NgbModal) {
 
   }
 
   //#endregion
 
   //#region Methods
+
+  ngOnInit() {
+  }
 
   method1Call(): void {
     this.httpClient.get('https://jsonplaceholder.typicode.com/users').subscribe(
@@ -38,9 +50,24 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  //#endregion
+  // open(content) {
+  //   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+  //     this.closeResult = `Closed with: ${result}`;
+  //   }, (reason) => {
+  //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  //   });
+  // }
 
-  ngOnInit() {
-  }
+  // private getDismissReason(reason: any): string {
+  //   if (reason === ModalDismissReasons.ESC) {
+  //     return 'by pressing ESC';
+  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+  //     return 'by clicking on a backdrop';
+  //   } else {
+  //     return  `with: ${reason}`;
+  //   }
+  // }
+
+  //#endregion
 
 }

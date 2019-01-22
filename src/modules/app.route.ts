@@ -8,16 +8,16 @@ const routes: Routes = [{
   path: '',
   children: [
     {
-      path: '',
-      loadChildren: './account/account.module#AccountModule'
-    },
-    {
       path: 'dashboard',
       loadChildren: './dashboard/dashboard.module#DashboardModule',
     },
     {
       path: 'skill-category',
       loadChildren: './skill-category/skill-category.module#SkillCategoryModule'
+    },
+    {
+      path: '',
+      loadChildren: './account/account.module#AccountModule'
     },
     {
       path: '**',

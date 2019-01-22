@@ -84,10 +84,10 @@ export class LoginComponent implements OnInit {
     // // // Block the UI.
     // this.blockUiService.start();
 
-    // // Get the invisible captcha code.
-    // this._invisibleCaptcha.execute();
+    // Get the invisible captcha code.
+    this._invisibleCaptcha.execute();
 
-        this.toastr.success(MessageSentConstant.loginMessage, MessageSentConstant.loginTitle);
+    this.toastr.success(MessageSentConstant.loginMessage, MessageSentConstant.loginTitle);
     // console.log(this.loginModel);
     // this.userService
     //   .basicLogin(this.loginModel)

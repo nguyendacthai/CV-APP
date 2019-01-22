@@ -29,6 +29,7 @@ import {InputsModule} from '@progress/kendo-angular-inputs';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { GridModule } from '@progress/kendo-angular-grid';
+import { NgbModalBackdrop } from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
 
 
 
@@ -66,16 +67,16 @@ export function HttpLoaderFactory(http: HttpClient) {
         ServiceModule.forRoot(),
         NgxLocalStorageModule.forRoot(),
         // GuardModule.forRoot(),
-        AppSharedModule,
+        AppSharedModule, // Include: Unauthorized layout(login page) and Authorize layout(Sidebar + Navigation bar)
         InputsModule,
         DropDownsModule,
-        GridModule,  // Include: Unauthorized layout(login page) and Authorize layout(Sidebar + Navigation bar)
+        GridModule,  
     ],
     declarations: [
-        CalendarPopupComponent,
+        CalendarPopupComponent
     ],
     exports: [
-        CalendarPopupComponent,
+        CalendarPopupComponent
     ],
     entryComponents: [
         CalendarPopupComponent
