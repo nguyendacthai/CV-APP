@@ -2,6 +2,8 @@
 import {Component, Inject} from '@angular/core';
 import {RouterLinkConstant} from '../../../constants/router-link.constant';
 
+import {UIService} from '../../../services/ui.service';
+
 declare var $: any;
 
 @Component({
@@ -20,7 +22,7 @@ export class SideBarComponent {
 
   //#region Constructors
 
-  public constructor() {
+  public constructor(@Inject('IUIService') public uiService: UIService) {
     this.routerLink = new RouterLinkConstant();
   }
 
@@ -28,9 +30,9 @@ export class SideBarComponent {
 
   //#region Methods
 
-  // public toggleSidebar() {
-  //   this.uiService.toggleSidebar();
-  // }
+  public toggleSidebar() {
+    this.uiService.toggleSidebar();
+  }
 
   //#endregion
 

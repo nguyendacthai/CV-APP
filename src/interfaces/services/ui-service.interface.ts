@@ -3,5 +3,7 @@ export interface IUIService {
 
   toggleMenuItem();
 
+  toggleSidebar();
+
   //#endregion
 }
